@@ -1,27 +1,10 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 
-# Create a list of data to 
-# be represented in x-axis 
-subjects = [ 'Math' , 'English' , 'History' , 
-			'Chem' , 'Geo' , 'Physics' , 'Bio' , 'CS' ] 
+st.write("""
+# My first app
+Hello *world!*
+""")
 
-# Create a list of data to be 
-# represented in y-axis 
-stress = [ 9 , 3 , 5 , 1 , 8 , 5 , 10 , 2 ] 
-
-# Create second list of data 
-# to be represented in y-axis 
-grades = [ 15 , 10 , 7 , 8 , 11 , 8 , 17 , 20 ] 
-
-# Create a dataframe using the three lists 
-df = pd.DataFrame(list(zip( stress , grades )), 
-				index = subjects , 
-				columns = [ 'Stress' , 'Grades' ]) 
-
-# use plot() method on the dataframe. 
-# No parameters are passed so it uses 
-# variables given in the dataframe 
-df.plot() 
-
+df = pd.read_csv("my_data.csv")
+st.line_chart(df)
