@@ -1,25 +1,29 @@
 import streamlit as st
 import pandas as pd
 
-# Create a list of data to be represented in x-axis 
-days = [ 'Saturday' , 'Sunday' , 'Monday' , 'Tuesday' , 
-        'Wednesday' , 'Thursday' , 'Friday' ] 
-  
-# Create a list of data to be  
+import pandas as pd 
+
+# Create a list of data to 
+# be represented in x-axis 
+subjects = [ 'Math' , 'English' , 'History' , 
+			'Chem' , 'Geo' , 'Physics' , 'Bio' , 'CS' ] 
+
+# Create a list of data to be 
 # represented in y-axis 
-calories = [ 1670 , 2011 , 1853 , 2557 , 
-            1390 , 2118 , 2063 ] 
-  
-# Create a dataframe using the two lists 
-df_days_calories = pd.DataFrame( 
-    { 'day' : days , 'calories' : calories }) 
-  
-df_days_calories
+stress = [ 9 , 3 , 5 , 1 , 8 , 5 , 10 , 2 ] 
 
-# use plot() method on the dataframe 
-df_days_calories.plot( 'day' , 'calories' ) 
+# Create second list of data 
+# to be represented in y-axis 
+grades = [ 15 , 10 , 7 , 8 , 11 , 8 , 17 , 20 ] 
 
-# Alternatively, you can use .set_index 
-# to set the data of each axis as follows: 
-# df_days_calories.set_index('day')['calories'].plot(); 
+# Create a dataframe using the three lists 
+df = pd.DataFrame(list(zip( stress , grades )), 
+				index = subjects , 
+				columns = [ 'Stress' , 'Grades' ]) 
+df 
+
+# use plot() method on the dataframe. 
+# No parameters are passed so it uses 
+# variables given in the dataframe 
+df.plot() 
 
