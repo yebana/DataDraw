@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-import markdown
+import markdown # type: ignore
 from datetime import datetime
 
 # Configure page settings
