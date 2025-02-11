@@ -19,7 +19,6 @@ grades = [ 15 , 10 , 7 , 8 , 11 , 8 , 17 , 20 ]
 df = pd.DataFrame(list(zip( stress , grades )), 
 				index = subjects , 
 				columns = [ 'Stress' , 'Grades' ]) 
-df 
 
 # use plot() method on the dataframe. 
 # No parameters are passed so it uses 
