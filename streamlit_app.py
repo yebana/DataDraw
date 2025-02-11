@@ -72,11 +72,11 @@ def main():
         st.sidebar.write(f"Found {len(posts)} results")
     
     # Create tabs for Home and individual posts
-    tabs = ["Home"] + [post['title'] for post in posts if 'slug' in st.experimental_get_query_params()]
+    tabs = ["Home"] + [post['title'] for post in posts if 'slug' in st.query_params()]
     current_tab = st.tabs(tabs)[0]
     
     # Check if a specific post is requested via query parameters
-    query_params = st.experimental_get_query_params()
+    query_params = st.query_params()
     selected_slug = query_params.get('slug', [None])[0]
     
     if selected_slug:
@@ -87,7 +87,7 @@ def main():
                 st.write(f"Published on {post['date'].strftime('%B %d, %Y')}")
                 st.markdown(post['content'], unsafe_allow_html=True)
                 if st.button("← Back to Posts"):
-                    st.experimental_set_query_params()
+                    st.query_params()
                     st.rerun()
                 break
     else:
