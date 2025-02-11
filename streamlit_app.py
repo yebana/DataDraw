@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-
-import pandas as pd 
+import matplotlib
 
 # Create a list of data to 
 # be represented in x-axis 
